@@ -1,6 +1,54 @@
-# Getting Started with Create React App
+# E-learning weekly schedule
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The main purpose of the project is to serve as a landing page. It creates a single page with the weekly lesson plan. You can click on any lesson and the WebEx link will start. I use it by setting it as the default page to load when Chrome starts. 
+
+Here's an example:
+
+![Example screenshot](images/Screenshot.png)
+
+Instructions on how to modify this project to suit your needs later on this README.
+
+Feel free to fork this project and modify it if it suits you!
+
+> I'm not a front-end developer. This project is something I did on my "free" time. A lot of things are missing (including tests). I'll try to update it, and possibly add new features.
+
+
+# Customizing the project to your needs
+
+> I assume that you're familiar with coding.
+
+## Configure schedule
+
+Edit file [src/data/schedule.json](schedule.json). The structure is simple. There's a list of days, and for each day is a list of lessons. Each lesson has a name (it is displayed as a label) and the teacher's WebEx "alias".
+
+> The order of days in the JSON file affects the order of the displayed items.
+
+> Links generated are in the form `https://minedu-primary.webex.com/meet/<teacher username>`. Sorry, hard-coded for now.
+
+## Build the project
+
+Simply run
+
+```
+npm run build
+```
+
+Then you can open build/index.html to see the schedule.
+
+> If you know how, you can host the page at some URL. Perhaps you can also share the URL with other parents of the class.
+
+## (Optional) Configure your browser to open the page by default
+
+- Open `build/index.html` in your browser.
+- Copy full path from URL bar.
+- Follow browser-specific instructions
+    - [Chrome](https://support.google.com/chrome/answer/95314?co=GENIE.Platform%3DDesktop&hl=en&oco=0)
+    - [Firefox](https://support.mozilla.org/en-US/kb/how-to-set-the-home-page) - you can configure the HTML as web page.
+    - Internet explorer - yeah, right.
+
+# Developing 
+
+Τhis project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
@@ -28,43 +76,3 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
