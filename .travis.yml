@@ -8,4 +8,4 @@ script:
   - npm test
   - npm run build
 on:
-  branch: master
+  branch: main
