@@ -1,4 +1,4 @@
-name: Node.js CI
+name: CI
 
 on: [push]
 
@@ -27,15 +27,15 @@ jobs:
           ${{ runner.os }}-build-${{ env.cache-name }}-
           ${{ runner.os }}-build-
           ${{ runner.os }}-
-
-    - name: Install Dependencies
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Install Packages
       run: npm install
-
-    - name: Build
-      run: npm build
-
+    - name: Build page
+      run: npm run build
     - name: Test
       run: npm test
-
       env:
         CI: true
