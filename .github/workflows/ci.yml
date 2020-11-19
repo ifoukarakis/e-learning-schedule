@@ -1,13 +1,14 @@
 name: Node.js CI
 
-on: [push, pull_request]
+on: [push]
 
 jobs:
   build:
 
     runs-on: ubuntu-latest
-    
-    working-directory: e-learning-schedule
+    defaults:
+      run:
+        working-directory: e-learning-schedule
 
     strategy:
       matrix:
