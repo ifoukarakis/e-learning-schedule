@@ -1,8 +1,7 @@
-import React from "react";
-import { shallow, mount } from "enzyme";
+import { render, screen } from '@testing-library/react'; 
 import App from "./App";
 
 
 test('renders calendar without chrashing', () => {
-  shallow(<App />);
+  render(<App />); 
 });
