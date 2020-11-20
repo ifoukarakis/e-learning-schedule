@@ -1,3 +1,5 @@
+![Tests](https://github.com/ifoukarakis/e-learning-schedule/workflows/CI/badge.svg)
+
 # E-learning weekly schedule
 
 The main purpose of the project is to serve as a landing page. It creates a single page with the weekly lesson plan. You can click on any lesson and the WebEx link will start. I use it by setting it as the default page to load when Chrome starts. 
