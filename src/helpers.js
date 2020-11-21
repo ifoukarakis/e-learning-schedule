@@ -11,7 +11,7 @@ export const zip = (a, b) => {
 };
 
 export const transpose = (m) => {
-    if (m === undefined || m.length == 0) {
+    if (m === undefined || m.length === 0) {
         return [];
     }
 
