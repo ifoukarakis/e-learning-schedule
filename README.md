@@ -27,6 +27,12 @@ Edit file [src/data/schedule.json](schedule.json). The structure is simple. Ther
 
 > Links generated are in the form `https://minedu-primary.webex.com/meet/<teacher username>`. Sorry, hard-coded for now.
 
+You can also add links (if you want) at the bottom of the page. Each item in the `links` array may have the following fields:
+- **`text` (required)**: the text to appear for the link. Must be non-empty string, otherwise the link will be skipped.
+- **`href` (required)**: the target of the link. Must be non-empty string, otherwise the link will be skipped.
+- `image` (optional): an image to appear in the avatar. If not specified, the first non-empty character from `text` is used (uppercased)
+- `bgColor` (optional): sets background color for the image. Useful in case the image is transparent.
+
 ## Build the project
 
 Simply run

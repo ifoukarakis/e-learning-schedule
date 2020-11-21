@@ -5,7 +5,8 @@ import TableCell from '@material-ui/core/TableCell';
 
 const useStyles = makeStyles((theme) => ({
   highlighted: {
-    backgroundColor: theme.palette.info.light
+    backgroundColor: theme.palette.info.light,
+    color: theme.palette.getContrastText(theme.palette.info.light)
   }
 }));
 

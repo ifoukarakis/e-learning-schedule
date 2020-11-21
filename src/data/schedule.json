@@ -125,5 +125,22 @@
                 }
             ]
         }
+    ],
+    "links": [
+        {
+            "text": "WebMail sch.gr",
+            "href": "https://webmail.sch.gr/login.php"
+        },
+        {
+            "text": "e-me",
+            "image": "https://auth.e-me.edu.gr/favicon.ico",
+            "href": "https://e-me.edu.gr/"
+        },
+        {
+            "text": "η-τάξη",
+            "image": "https://eclass.sch.gr/images/e-taxi-logo.png",
+            "href": "https://eclass.sch.gr/",
+            "bgColor": "#616161"
+        }
     ]
 }
