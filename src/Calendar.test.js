@@ -1,7 +1,6 @@
 import React from "react";
 import { render, screen } from '@testing-library/react'
 import Calendar from "./Calendar";
-import TableRow from '@material-ui/core/TableRow';
 
 const SCHEDULE = {
   "days": [
@@ -28,13 +27,38 @@ const SCHEDULE = {
   ]
 };
 
-test('renders calendar without chrashing', () => {
-  const wrapper = render(<Calendar schedule={SCHEDULE} />)
-});
+const TIMESLOTS = [
+  ["14:10", "14:40"],
+  ["14:50", "15:20"],
+  ["15:30", "16:00"],
+  ["16:10", "16:40"],
+  ["16:50", "17:20"]
+];
+
+describe('calendar', () => {
+  it('renders without chrashing', () => {
+    const wrapper = render(<Calendar schedule={SCHEDULE} timeslots={TIMESLOTS} />)
+  });
+
+  it('displays all lessons', () => {
+    const { queryAllByText } = render(<Calendar schedule={SCHEDULE} timeslots={TIMESLOTS} />)
+    expect(queryAllByText(/Lesson/i)).toHaveLength(10)
+  });
+
+  it('displays all timeslots', () => {
+    const { getByText } = render(<Calendar schedule={SCHEDULE} timeslots={TIMESLOTS} />)
+    TIMESLOTS.forEach((item) => {
+      expect(getByText(item[0] + " - " + item[1])).toBeTruthy()
+    })
+  });
+  
+  
+  it('displays all days', () => {
+    const { getByText } = render(<Calendar schedule={SCHEDULE} timeslots={TIMESLOTS} />)
+    expect(getByText('Monday')).toBeTruthy()
+    expect(getByText('Tuesday')).toBeTruthy()
+  });
+})
 
 
-test('displays all items including headers', () => {
-  const {findAllByText } = render(<Calendar schedule={SCHEDULE} />);
-  const lessonElement = screen.getByText(/Lesson 6/i);
-  expect(screen.queryAllByText(/Lesson/i)).toHaveLength(10)
-});
+

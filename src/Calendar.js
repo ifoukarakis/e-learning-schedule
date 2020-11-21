@@ -15,20 +15,11 @@ import Lesson from './Lesson';
 import { currentTimeslot, transpose, zip } from './helpers';
 import { useClock } from './useClock';
 
-
-const TIMESLOTS = [
-  ["14:10", "14:40"],
-  ["14:50", "15:20"],
-  ["15:30", "16:00"],
-  ["16:10", "16:40"],
-  ["16:50", "17:20"]
-];
-
 const useStyles = makeStyles((theme) => ({
   header: {
     padding: theme.spacing(3),
     textAlign: 'center',
-    color: theme.palette.text.primary,
+    color: theme.palette.info.contrastText,
     background: theme.palette.info.main
   },
   table: {
@@ -50,11 +41,9 @@ export default function Calendar(props) {
   
   const dayNames = props.schedule.days.map((day) => day.name);
   const lessonsPerTimeslot = transpose(props.schedule.days.map((day) => day.lessons));
+  const curTimeslot = currentTimeslot(time, props.timeslots);
 
-  console.log(time)
-  const curTimeslot = currentTimeslot(time, TIMESLOTS);
-
-  const rows = zip(TIMESLOTS, lessonsPerTimeslot).map(([timeslot, lessons]) => {
+  const rows = zip(props.timeslots, lessonsPerTimeslot).map(([timeslot, lessons]) => {
     return {
       timeslot,
       lessons: lessons.map((lesson, index) => {
