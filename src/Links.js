@@ -35,16 +35,7 @@ function LinkAvatar(props) {
     const classes = useStyles();
     const theme = useTheme();
 
-    if(!props.link.text || ! props.link.text.trim()) {
-        return (null)
-    }
-
-    if(!props.link.href || ! props.link.href.trim()) {
-        return (null)
-    }
-
     if(props.link.image) {
-
         const style = props.link.bgColor ? {
             backgroundColor: props.link.bgColor,
             color: theme.palette.getContrastText(props.link.bgColor)
@@ -83,7 +74,8 @@ export default function Links(props) {
     return (
         <Grid container direction="row" justify="center" alignItems="center">
             {
-                props.links.map((link, index) => <LabeledIcon link={link} key={"link-" + index} />)
+                props.links.filter((link) => link.text && link.text.trim() && link.href && link.href.trim())
+                     .map((link, index) => <LabeledIcon link={link} key={"link-" + index} />)
             }
         </Grid>
     );
